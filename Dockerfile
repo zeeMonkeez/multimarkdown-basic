@@ -1,10 +1,10 @@
 FROM alpine:latest
-MAINTAINER Peter Phillips <peter.phillips@cumbria.ac.uk>
+MAINTAINER Jonas Zimmermann <j@lessjunkmorefunk.de>
 
-LABEL version="1.0.0"
+LABEL version="1.0.1"
 
 RUN apk update && \
-  apk add --no-cache  g++ gcc git make cmake && \
+  apk add --no-cache  g++ gcc git make cmake curl && \
   git clone https://github.com/fletcher/MultiMarkdown-5.git && \
   cd MultiMarkdown-5/ && ./link_git_modules && ./update_git_modules && \
   make && cd build && make && make install && \
